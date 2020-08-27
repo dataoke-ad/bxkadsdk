@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="color_333">#333333</color>
+    <color name="color_title">#666666</color>
+
+    <color name="color_light_gray">#D3D3D3</color>
+    <color name="color_white">#ffffff</color>
+    <color name="color_norm_bac">#F6F6F6</color>
+
+    <color name="color_search_bac">#FF5001</color>
+    <color name="color_search_bac1">#CCCCCC</color>
+    <color name="color_search_bac2">#FA1111</color>
+    <color name="color_goods_price">#538CFD</color>
+
+    <color name="color_ff1f4c">#FF1F4C</color>
+    <color name="color_ff5050">#FF5050</color>
+    <color name="color_ff345d">#FF345D</color>
+    <color name="color_f8e71c">#F8E71C</color>
+    <color name="color_fe3738">#FE3738</color>
+    <color name="color_e9eef4">#E9EEF4</color>
+    <color name="color_ff3560">#FF3560</color>
+    <color name="color_ff0137">#FF0137</color>
+    <color name="color_ff5000">#FF5000</color>
+    <color name="color_ff5101">#FF5101</color>
+    <color name="color_f57223">#F57223</color>
+    <color name="color_ff3b32">#FF3B32</color>
+    <color name="color_9b">#9b9b9b</color>
+    <color name="color_fff">#ffffff</color>
+</resources>

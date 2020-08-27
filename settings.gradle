@@ -1,0 +1,3 @@
+include ':bxkadsdklib'
+include ':app'
+rootProject.name = "bxkadsdk"

@@ -1,0 +1,24 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!-- rectangle表示为矩形 -->
+    <size
+        android:width="80dp"
+        android:height="40dp" />
+
+    <gradient
+        android:angle="180"
+        android:centerColor="@color/color_search_bac2"
+        android:centerX="0.5"
+        android:centerY="0.5"
+        android:endColor="@color/color_search_bac2"
+        android:startColor="@color/color_search_bac2"
+        android:type="linear" />
+
+
+    <corners
+        android:bottomLeftRadius="0dp"
+        android:bottomRightRadius="2dp"
+        android:topLeftRadius="0dp"
+        android:topRightRadius="2dp" />
+</shape>
+

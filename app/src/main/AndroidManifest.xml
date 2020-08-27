@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dataoke.bxkadsdk">
+
+    <application
+        android:name="com.dataoke.bxkadsdk.MyApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/netconfig"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.dataoke.bxkadsdk.FloatActivity"></activity>
+        <activity android:name="com.dataoke.bxkadsdk.MyDialogActivity" />
+        <activity android:name="com.dataoke.bxkadsdk.SearchActivity" />
+        <activity android:name="com.dataoke.bxkadsdk.InfoFlowActivity" />
+        <activity android:name="com.dataoke.bxkadsdk.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.dataoke.bxkadsdk.OpenScreenActivity" />
+    </application>
+
+</manifest>
