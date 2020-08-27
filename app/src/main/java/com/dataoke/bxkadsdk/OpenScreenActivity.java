@@ -30,7 +30,7 @@ public class OpenScreenActivity extends AppCompatActivity {
 
             @Override
             public void loadFail(String code, String msg) {
-                Log.e("qwer",msg);
+                
             }
         });
     }
