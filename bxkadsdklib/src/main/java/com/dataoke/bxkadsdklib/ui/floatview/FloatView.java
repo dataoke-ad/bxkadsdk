@@ -2,6 +2,7 @@ package com.dataoke.bxkadsdklib.ui.floatview;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
@@ -20,7 +21,7 @@ import com.dataoke.bxkadsdklib.util.ErrorCode;
 import com.dataoke.bxkadsdklib.util.Util;
 
 public class FloatView extends BaseView<IFloatViewListener> {
-    private ImageView image,close_img;
+    private ImageView image,close_img,logo_img;
 
     public FloatView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -32,6 +33,7 @@ public class FloatView extends BaseView<IFloatViewListener> {
         View view = inflate(context, R.layout.float_view_layout, this);
         image=view.findViewById(R.id.image);
         close_img=view.findViewById(R.id.close_img);
+        logo_img=view.findViewById(R.id.logo_img);
         close_img.setOnClickListener(view1 -> {
             if (null!=listener) listener.closeFloatView();
             setVisibility(GONE);
@@ -64,6 +66,10 @@ public class FloatView extends BaseView<IFloatViewListener> {
 
     private void setInfo(Context context, FloatViewBean floatViewBean) {
         try {
+            if (!TextUtils.isEmpty(floatViewBean.getAppLogo())){
+                Glide.with(getContext()).load(floatViewBean.getAppLogo()).apply(RequestOptions.centerCropTransform()).into(logo_img);
+                Util.toOutBrowser(getContext(),floatViewBean.getAppLogoLinkUrl(),logo_img);
+            }
             Glide.with(context).load(floatViewBean.getFront_img()).apply(RequestOptions.centerCropTransform()).into(image);
             image.setOnClickListener(view -> {
                 if (null!=listener) listener.clickImg(floatViewBean.getMall_url());

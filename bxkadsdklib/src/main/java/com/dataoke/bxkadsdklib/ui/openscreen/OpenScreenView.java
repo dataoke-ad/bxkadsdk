@@ -1,10 +1,13 @@
 package com.dataoke.bxkadsdklib.ui.openscreen;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Paint;
+import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -32,18 +35,9 @@ import java.util.List;
  */
 public class OpenScreenView extends BaseView<IOpenScreenViewListener> {
     private RelativeLayout ac_layout;
-    private LinearLayout goods_layout;
-    private ImageView ac_img;
-    private ImageView goods_img;
-    private ImageView is_mall_icon;
-    private TextView title_text;
-    private TextView quan_money_text;
-    private TextView quan_price_text;
-    private TextView old_price_text;
-    private TextView sall_num_text;
-    private TextView tag_text;
-    private TextView tag1_text;
-    private LinearLayout tag_layout;
+    private LinearLayout goods_layout,tag_layout;
+    private ImageView ac_img,goods_img,is_mall_icon,logo_img;;
+    private TextView title_text,quan_money_text,quan_price_text,old_price_text,sall_num_text,tag_text,tag1_text;
 
     public OpenScreenView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -66,6 +60,7 @@ public class OpenScreenView extends BaseView<IOpenScreenViewListener> {
         tag_text = view.findViewById(R.id.tag_text);
         tag1_text = view.findViewById(R.id.tag1_text);
         tag_layout = view.findViewById(R.id.tag_layout);
+        logo_img = view.findViewById(R.id.logo_img);
     }
 
     @Override
@@ -101,11 +96,14 @@ public class OpenScreenView extends BaseView<IOpenScreenViewListener> {
      */
     private void setBaseInfo(OpenScreenBean dataBean) {
         try {
+            if (!TextUtils.isEmpty(dataBean.getAppLogo())){
+                Glide.with(getContext()).load(dataBean.getAppLogo()).apply(RequestOptions.centerCropTransform()).into(logo_img);
+                Util.toOutBrowser(getContext(),dataBean.getAppLogoLinkUrl(),logo_img);
+            }
             //活动
             if (dataBean.getData_type() == 2) {
                 goods_layout.setVisibility(View.GONE);
                 ac_layout.setVisibility(View.VISIBLE);
-
                 Glide.with(getContext()).load(dataBean.getFront_img()).apply(RequestOptions.centerCropTransform()).into(ac_img);
                 ac_layout.setOnClickListener(view -> {
                     if (null!=listener) listener.click(dataBean.getMall_url());

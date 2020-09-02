@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
@@ -25,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class InfoFlowView extends BaseView<InfoFlowViewListener> {
-    private ImageView ac_img;
+    private ImageView ac_img,logo_img;
     private RecyclerView recyclerView;
 
     private InfoFlowAdapter infoFlowAdapter;
@@ -40,6 +41,7 @@ public class InfoFlowView extends BaseView<InfoFlowViewListener> {
         super.init(context);
         View view = inflate(context, R.layout.info_flow_view_layout,this);
         ac_img=view.findViewById(R.id.ac_img);
+        logo_img=view.findViewById(R.id.logo_img);
         recyclerView=view.findViewById(R.id.recyclerView);
 
     }
@@ -70,6 +72,10 @@ public class InfoFlowView extends BaseView<InfoFlowViewListener> {
 
     private void setInfo(Context context, InfoFlowBean infoFlowBean) {
         try {
+            if (!TextUtils.isEmpty(infoFlowBean.getAppLogo())){
+                Glide.with(getContext()).load(infoFlowBean.getAppLogo()).apply(RequestOptions.centerCropTransform()).into(logo_img);
+                Util.toOutBrowser(getContext(),infoFlowBean.getAppLogoLinkUrl(),logo_img);
+            }
             //活动
             if (infoFlowBean.getData_type()==2){
                 ac_img.setVisibility(VISIBLE);

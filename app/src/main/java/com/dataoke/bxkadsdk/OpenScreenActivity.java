@@ -1,10 +1,14 @@
 package com.dataoke.bxkadsdk;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.dataoke.bxkadsdklib.interfaces.IOpenScreenViewListener;
 import com.dataoke.bxkadsdklib.ui.openscreen.OpenScreenView;
 
@@ -20,7 +24,7 @@ public class OpenScreenActivity extends AppCompatActivity {
         open_screen_view.setListener(new IOpenScreenViewListener() {
             @Override
             public void click(String url) {
-
+                startActivity(new Intent(OpenScreenActivity.this,WebViewActivity.class).putExtra("url",url));
             }
 
             @Override
@@ -30,7 +34,7 @@ public class OpenScreenActivity extends AppCompatActivity {
 
             @Override
             public void loadFail(String code, String msg) {
-                
+
             }
         });
     }

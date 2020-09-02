@@ -7,7 +7,25 @@ public class InfoFlowBean {
     private int data_type;
     private String mall_url;
     private String front_img;
+    private String appLogo;
+    private String appLogoLinkUrl;
     private List<ListBean> list;
+
+    public String getAppLogo() {
+        return appLogo;
+    }
+
+    public void setAppLogo(String appLogo) {
+        this.appLogo = appLogo;
+    }
+
+    public String getAppLogoLinkUrl() {
+        return appLogoLinkUrl;
+    }
+
+    public void setAppLogoLinkUrl(String appLogoLinkUrl) {
+        this.appLogoLinkUrl = appLogoLinkUrl;
+    }
 
     public String getFront_img() {
         return front_img;

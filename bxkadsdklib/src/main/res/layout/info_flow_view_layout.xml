@@ -9,5 +9,13 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ac_img"/>
+    <ImageView
+        android:id="@+id/logo_img"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="-20dp"
+        android:layout_below="@id/recyclerView"
+        android:layout_alignParentRight="true"/>
 </RelativeLayout>

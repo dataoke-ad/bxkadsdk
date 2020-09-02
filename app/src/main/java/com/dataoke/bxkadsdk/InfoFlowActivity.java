@@ -1,5 +1,6 @@
 package com.dataoke.bxkadsdk;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,12 +20,12 @@ public class InfoFlowActivity extends AppCompatActivity {
         info_flow_view.setListener(new InfoFlowViewListener() {
             @Override
             public void clickAd(String url) {
-                Log.e("qwer",url);
+                startActivity(new Intent(InfoFlowActivity.this,WebViewActivity.class).putExtra("url",url));
             }
 
             @Override
             public void clickGoodsItem(int position, String url) {
-                Log.e("qwer",position+"..."+url);
+                startActivity(new Intent(InfoFlowActivity.this,WebViewActivity.class).putExtra("url",url));
             }
 
             @Override
@@ -40,6 +41,6 @@ public class InfoFlowActivity extends AppCompatActivity {
     }
 
     public void refreshdata(View view) {
-
+        info_flow_view.initViewData(this,ApiParams.INFO_FLOW_COMID);
     }
 }

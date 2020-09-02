@@ -1,8 +1,10 @@
 package com.dataoke.bxkadsdk;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.dataoke.bxkadsdklib.interfaces.ISearchViewListener;
@@ -18,15 +20,13 @@ public class SearchActivity extends AppCompatActivity {
         search_view.initViewData(this,ApiParams.SEARCH_COMID);
         search_view.setListener(new ISearchViewListener() {
             @Override
-            public void search(String url, String content) {
-                if (TextUtils.isEmpty(url)){
+            public void searchSuccess(String url) {
+                startActivity(new Intent(SearchActivity.this,WebViewActivity.class).putExtra("url",url));
+            }
 
-                }else if (TextUtils.isEmpty(content)){
-                    Toast.makeText(SearchActivity.this,"请输入搜索内容",Toast.LENGTH_SHORT).show();
-                }else {
-                    //使用link自行跳转webview
-                    String link=url+content;
-                }
+            @Override
+            public void searchEmpty() {
+                Toast.makeText(SearchActivity.this,"请输入内容",Toast.LENGTH_SHORT).show();
             }
 
             @Override

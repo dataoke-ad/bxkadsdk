@@ -8,6 +8,6 @@ public class MyApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Bxk.init("eebf41de","6a4188fa009807a30b9dc4e0df3d2a05");
+        Bxk.init("0df59c13","4351e56096c6c4410bd3094bbc862b2e");
     }
 }

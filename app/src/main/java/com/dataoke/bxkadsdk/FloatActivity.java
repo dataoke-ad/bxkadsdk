@@ -1,5 +1,6 @@
 package com.dataoke.bxkadsdk;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -18,6 +19,7 @@ public class FloatActivity extends AppCompatActivity {
         float_view.setListener(new IFloatViewListener() {
             @Override
             public void clickImg(String link) {
+                startActivity(new Intent(FloatActivity.this,WebViewActivity.class).putExtra("url",link));
 
             }
 

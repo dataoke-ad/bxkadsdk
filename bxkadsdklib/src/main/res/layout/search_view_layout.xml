@@ -1,28 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="40dp">
-    <EditText
-        android:id="@+id/edit"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:hint="搜索全网优惠券"
-        android:lines="1"
-        android:maxLength="50"
-        android:textSize="14sp"
-        android:singleLine="true"
-        android:textColor="@color/color_title"
-        android:textColorHint="@color/color_light_gray"
-        android:background="@drawable/shape_search_gradient_left_button_bac"
-        />
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
     <TextView
-        android:id="@+id/search_text"
-        android:layout_width="80dp"
-        android:layout_height="match_parent"
-        android:text="搜索"
-        android:gravity="center"
-        android:textSize="16dp"
-        android:textColor="@color/color_white"
-        android:background="@drawable/shape_search_gradient_button_bac"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="你还在网上原价购物吗？\n限时开放查询全网隐藏优惠券功能。"
+        android:textColor="@color/color_title"
+        android:textSize="19sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <EditText
+            android:id="@+id/edit"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:hint="搜索全网优惠券"
+            android:lines="1"
+            android:maxLength="50"
+            android:textSize="14sp"
+            android:singleLine="true"
+            android:textColor="@color/color_title"
+            android:textColorHint="@color/color_light_gray"
+            android:background="@drawable/shape_search_gradient_left_button_bac"
+            />
+        <TextView
+            android:id="@+id/search_text"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:text="搜索"
+            android:gravity="center"
+            android:textSize="16dp"
+            android:textColor="@color/color_white"
+            android:background="@drawable/shape_search_gradient_button_bac"/>
+    </LinearLayout>
 </LinearLayout>

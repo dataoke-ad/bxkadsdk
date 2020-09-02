@@ -48,7 +48,7 @@ public class ApiController {
     public static <T> Function<ResponseModel<T>, ObservableSource<T>> judgeData(Class<T> clazz){
         return model ->
              it -> {
-                if (model.getCode().equals("1")){
+                if (model.getCode().equals("200")){
                     if (null==model.getData()) {
                         try {
                             it.onNext(clazz.newInstance());

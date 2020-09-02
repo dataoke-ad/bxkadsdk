@@ -1,5 +1,6 @@
 package com.dataoke.bxkadsdk;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -18,6 +19,7 @@ public class MyDialogActivity extends AppCompatActivity {
         my_dialog_view.setListener(new IMyDialogListener() {
             @Override
             public void clickImg(String link) {
+                startActivity(new Intent(MyDialogActivity.this,WebViewActivity.class).putExtra("url",link));
 
             }
 

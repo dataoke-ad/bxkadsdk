@@ -12,6 +12,24 @@ public class FloatViewBean {
     private int show_type;
     private int data_type;
     private String mall_url;
+    private String appLogo;
+    private String appLogoLinkUrl;
+
+    public String getAppLogo() {
+        return appLogo;
+    }
+
+    public void setAppLogo(String appLogo) {
+        this.appLogo = appLogo;
+    }
+
+    public String getAppLogoLinkUrl() {
+        return appLogoLinkUrl;
+    }
+
+    public void setAppLogoLinkUrl(String appLogoLinkUrl) {
+        this.appLogoLinkUrl = appLogoLinkUrl;
+    }
 
     public String getMall_url() {
         return mall_url;

@@ -23,6 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.dataoke.bxkadsdk.OpenScreenActivity" />
+        <activity android:name=".WebViewActivity" />
     </application>
 
 </manifest>
