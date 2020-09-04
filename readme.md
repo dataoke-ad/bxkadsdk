@@ -1,5 +1,5 @@
 ## 一、项目集成（以Androidstudio为例）
-##1、在project的build.gradle中添加  maven{url'https://jitpack.io'}
+1、在project的build.gradle中添加  maven{url'https://jitpack.io'}
    ```groovy
 allprojects {
 	repositories {
